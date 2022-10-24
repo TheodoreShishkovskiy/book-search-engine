@@ -25,4 +25,4 @@
 :octocat: [Theodore Shishkovskiy](https://github.com/TheodoreShishkovskiy)
 
 ## Questions
-✉️ Contact me with any questions: [email](mailto:tmshishkovskiy@gmail.com) , [GitHub](https://github.com/TheodoreShishkovskiy)<br />
+✉️ Contact me with any questions: [Email](mailto:tmshishkovskiy@gmail.com) , [GitHub](https://github.com/TheodoreShishkovskiy)<br />
