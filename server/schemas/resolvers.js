@@ -17,6 +17,7 @@ const resolvers = {
   },
 
   Mutation: {
+    // mutation requiring login crendentials
   login: async (parent, { email, password }) => {
     const user = await User.findOne({ email });
     if (!user) {
@@ -29,7 +30,13 @@ const resolvers = {
     const token = signToken(user);
     return { token, user };
   },
+    // mutation to add new users
+  addUser: async (parent, args) => {
+    const user = await User.create(args);
+    const token = signToken(user);
+    return { token, user };
+  },
 
-  addUser: 
+
 
 }
