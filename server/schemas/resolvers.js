@@ -44,10 +44,19 @@ const resolvers = {
       );
       return bookUser;
     }
-    throw new AuthenticationError('Must be logged in to do this');
+    throw new AuthenticationError('Must be logged in to do this!');
   },
-  
-
-
+  // Mutation to remove a saved book
+  removeBook: async (parent, {bookId}, context) => {
+    if (context.user) {
+      const bookUser = await User.findByIdAndUpdate(
+        {_id: context.user._id}, {$pull: {savedBooks: {bookId}}}, {new: true}
+      );
+      return bookUser;
+    }
+    throw new AuthenticationError('Must be logged in to do this!')
+  }
 }
-}
+},
+
+module.exports = resolvers;
