@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-import Auth from '../utils/auth';
+// Neccesary imports included as well as Auth/Mutations
+import React, { useState } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
+import { useMutation } from "@apollo/react-hooks";
+import Auth from "../utils/auth";
+import { ADD_USER } from "../utils/mutations";
 
-// imports the ADD_USER mutation
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
-
+// Function to handle the Sign Up form
 const SignupForm = () => {
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = use StaticRange({username: '', email: '', password: '',});
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-
-  // Mutation handling error/data
-  const [addUser, {error, data}] = useMutation(ADD_USER);
-
-  useEffect(() => {
-    if (error){
-      setShowAlert(true);
-    }else{
-      setShowAlert(false);
-    }
-  },[error]);
+  const [addUser, {error}] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
