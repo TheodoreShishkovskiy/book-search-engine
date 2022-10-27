@@ -16,12 +16,17 @@
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
 - [Screenshot](#screenshot) 
-- [Deployed Application](#Deployed)
 - [Contributing](#contributing)
 - [Questions](#questions)
 
 ## Description
+Refactored a function Google Books API search engine into a GraphQL API that is built using the Apollo Server. The original app was already built but needed to be modified to be able switch the original API into a GraphQL API.
 
+## Link to Live - Github
+https://github.com/TheodoreShishkovskiy/book-search-engine
+
+## Link to Live - Heroku
+https://tedsbooksearch.herokuapp.com/
 
 ## Screenshot
 ![Google Book Search](./client/src/assets/tedsbooksearch.png)
