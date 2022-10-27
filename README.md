@@ -15,12 +15,17 @@
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
+- [Screenshot](#screenshot) 
+- [Deployed Application](#Deployed)
 - [Contributing](#contributing)
 - [Questions](#questions)
 
 ## Description
 
-  
+
+## Screenshot
+![Google Book Search](./client/src/assets/tedsbooksearch.png)
+
 ## Contributing
 :octocat: [Theodore Shishkovskiy](https://github.com/TheodoreShishkovskiy)
 
