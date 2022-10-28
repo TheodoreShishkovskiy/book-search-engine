@@ -12,7 +12,7 @@ module.exports = {
 
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
-      token = token.split(' ').pop().trim();
+      token = token.split(" ").pop().trim();
     }
 
     if (!token) {
@@ -29,7 +29,8 @@ module.exports = {
     }
 
     // send to next endpoint
-    next();
+    // changed to return to req instead of next()
+    return req;
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
