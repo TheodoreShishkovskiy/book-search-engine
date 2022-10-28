@@ -29,11 +29,13 @@ const SignupForm = () => {
 
     // Checks to see if token variables fit the login Auth
     try {
-      const {data} = await addUser({variables: {...userFormData},
+      const { data } = await addUser({
+        variables: { ...userFormData },
       });
       Auth.login(data.addUser.token);
-    }catch(err){
-      console.error(err);
+    } catch (err) {
+      console.error(error);
+      setShowAlert(true);
     }
 
     setUserFormData({
@@ -94,7 +96,7 @@ const SignupForm = () => {
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
-          Submit
+          SubmitFtok
         </Button>
       </Form>
     </>

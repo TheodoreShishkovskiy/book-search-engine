@@ -7,7 +7,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const LoginForm = () => {
-  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -27,18 +27,19 @@ const LoginForm = () => {
       event.stopPropagation();
     }
     try {
-      const {data} = await login({
-        variables: {...userFormData},
+      const { data } = await login({
+        variables: { ...userFormData },
       });
       Auth.login(data.login.token);
-    } catch (err){
-      console.error(err);
+    } catch (err) {
+      console.error(error);
+      setShowAlert(true);
     }
 
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      username: "",
+      email: "",
+      password: "",
     });
   };
 
