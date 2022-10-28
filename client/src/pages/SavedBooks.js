@@ -10,9 +10,9 @@ import { REMOVE_BOOK } from "../utils/mutations";
 // This will allows user to save and delete books
 // The books are synced into the users Local Storage
 const SavedBooks = () => {
-  const {loading, data} = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || [];
-  const [removeBook, {error}] = useMutation(REMOVE_BOOK);
+  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
@@ -22,17 +22,22 @@ const SavedBooks = () => {
       const response = await removeBook({
         variables: { bookId: bookId },
       });
+
       if (!response) {
-        throw new Error("Oops! Something went Wrong!");
+        throw new Error("something went wrong!");
       }
       removeBookId(bookId);
     } catch (err) {
       console.error(error);
     }
   };
+
+  // If data still loads
   if (loading) {
     return <h2>LOADING...</h2>;
   }
+
+
   const savedBookIds = userData.savedBooks.map((book) => book.bookId);
   saveBookIds(savedBookIds);
 
