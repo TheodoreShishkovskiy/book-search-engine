@@ -1,5 +1,8 @@
 const { gql } = require('apollo-server-express');
 
+// All the typeDefs needed for this GraphQL
+// Can be grabbed from Apollo GraphQL
+
 const typeDefs = gql`
   type Book {
     authors: [String]
